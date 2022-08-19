@@ -1,0 +1,22 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    /*    background-image: url('http://azucar.hn/wp-content/uploads/2019/06/Ingenios-1100x650.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-color: #fff;
+}

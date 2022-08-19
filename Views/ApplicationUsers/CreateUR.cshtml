@@ -1,0 +1,37 @@
+﻿@model CrudSecApp.Models.ApplicationUserRol
+
+@{
+    ViewData["Title"] = "CreateUR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear usuario</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateUR">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <div class="form-group">
+                <label asp-for="ApplicationUserId" class="control-label"></label>
+                <select asp-for="ApplicationUserId" class ="form-control" asp-items="ViewBag.ApplicationUserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RolesId" class="control-label"></label>
+                <select asp-for="RolesId" class ="form-control" asp-items="ViewBag.RolesId"></select>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="CreateUR" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

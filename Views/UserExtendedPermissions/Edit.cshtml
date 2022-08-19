@@ -1,0 +1,76 @@
+﻿@model CrudSecApp.Models.UserExtendedPermission
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar permiso extendido para usuario</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="RowVersion" />
+            <div class="form-group">
+                <label asp-for="ApplicationUserPermissionId" class="control-label"></label>
+                <select asp-for="ApplicationUserPermissionId" class="form-control" asp-items="ViewBag.ApplicationUserPermissionId"></select>
+                <span asp-validation-for="ApplicationUserPermissionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcessCode" class="control-label"></label>
+                <input asp-for="AcessCode" class="form-control" />
+                <span asp-validation-for="AcessCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessEntity" class="control-label"></label>
+                <input asp-for="BusinessEntity" class="form-control" />
+                <span asp-validation-for="BusinessEntity" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="TransaccionUid" class="control-label"></label>
+                <input asp-for="TransaccionUid" class="form-control" />
+                <span asp-validation-for="TransaccionUid" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="TipoTransaccion" class="control-label"></label>
+                <input asp-for="TipoTransaccion" class="form-control" />
+                <span asp-validation-for="TipoTransaccion" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="FechaTransaccionUtc" class="control-label"></label>
+                <input asp-for="FechaTransaccionUtc" class="form-control" />
+                <span asp-validation-for="FechaTransaccionUtc" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="DescripcionTransaccion" class="control-label"></label>
+                <input asp-for="DescripcionTransaccion" class="form-control" />
+                <span asp-validation-for="DescripcionTransaccion" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="FechaTransaccion" class="control-label"></label>
+                <input asp-for="FechaTransaccion" class="form-control" />
+                <span asp-validation-for="FechaTransaccion" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="ModificadoPor" class="control-label"></label>
+                <input asp-for="ModificadoPor" class="form-control" />
+                <span asp-validation-for="ModificadoPor" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CrudSecApp.Models.UserExtendedPermission>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Permisos extendidos para usuarios</h2>
+
+<p>
+    <a asp-action="Create">New</a>
+</p>
+ <div class="table-responsive">
+    <table class="table" style="white-space: nowrap; overflow-x: auto;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcessCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BusinessEntity)
+                </th>
+               @* <th>
+                    @Html.DisplayNameFor(model => model.TransaccionUid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoTransaccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaTransaccionUtc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DescripcionTransaccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaTransaccion)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.ModificadoPor)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.RowVersion)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUserPermission)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcessCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusinessEntity)
+                </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.TransaccionUid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoTransaccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaTransaccionUtc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionTransaccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaTransaccion)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModificadoPor)
+                </td>
+               @*<td>
+                    @Html.DisplayFor(modelItem => item.RowVersion)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUserPermission.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,81 @@
+﻿@model CrudSecApp.Models.ApplicationModule
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar módulo</h1>
+
+<h3>¿Está seguro de que desea eliminar el Módulo?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Module)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Module)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TransaccionUid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TransaccionUid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoTransaccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoTransaccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaTransaccionUtc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaTransaccionUtc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescripcionTransaccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescripcionTransaccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaTransaccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaTransaccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModificadoPor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModificadoPor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RowVersion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RowVersion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Application)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Application.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

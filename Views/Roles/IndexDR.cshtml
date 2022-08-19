@@ -1,0 +1,59 @@
+﻿@model CrudSecApp.Models.UsViewModels.ModelUR
+
+@{
+    ViewData["Title"] = "IndexDR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles de Roles del usuario</h1>
+
+<p>
+    <a asp-action="CreateD">Agregar permiso al rol</a>
+</p>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Rol</th>
+            <th>Permisos</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DetatlleRol)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RolId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationPermission.Permission)
+                </td>
+                <td>
+                    <a asp-action="DeleteDR" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<h1>Usuarios que tienen el rol</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AppUserRols)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model CrudSecApp.Models.ApplicationUserRol
+
+@{
+    ViewData["Title"] = "DeleteR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar rol a usuario</h1>
+
+<h3>¿Está seguro de que desea eliminar el rol?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Roles.ApplicationUserRols)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Roles.Codigo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Roles.DetalleRols)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUserId)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteR">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="DeleteR" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

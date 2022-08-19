@@ -1,0 +1,35 @@
+﻿@model CrudSecApp.Models.DetalleRol
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Role</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateD">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <div class="form-group">
+                <label asp-for="RolId" class="control-label"></label>
+                <select asp-for="RolId" class ="form-control" asp-items="ViewBag.RolId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationPermissionId" class="control-label"></label>
+                <select asp-for="ApplicationPermissionId" class ="form-control" asp-items="ViewBag.ApplicationPermissionId"></select>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="CreateD" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,73 @@
+﻿@model CrudSecApp.Models.UsViewModels.ModelUR
+
+
+@{
+    ViewData["Title"] = "IndexUR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Detalles de Roles del usuario</h3>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Roles</th>
+            <th>Usuario</th>
+            <th>Permisos</th>
+            <th></th>
+        </tr>
+    </thead>
+   <tbody>
+       @foreach (var item in Model.AppUserRols)
+        {
+            <tr>
+                <td>                     
+                    @foreach (var rol in item.Roles.ApplicationUserRols)
+                    {
+                        @rol.Roles.Codigo<br />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.Name)
+                </td>
+                <td>
+                    @foreach (var rol in item.Roles.DetalleRols)
+                    {
+                        @rol.ApplicationPermission.Permission <br />
+                    }
+                </td>
+                <td>
+                    <a asp-action="DeleteR" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+           }
+    </tbody>
+</table>
+<hr />
+<h3>Detalles de Permisos del usuario</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Permisos</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @foreach (var rol in item.ApplicationUserPermissions)
+                    {
+                    @rol.ApplicationPermission.Permission <br />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
